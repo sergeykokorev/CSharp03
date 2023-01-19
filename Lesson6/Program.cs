@@ -211,32 +211,44 @@ Console.WriteLine();
 [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ] => [3, 5]
 */
 
+Console.Write($"Введите размерность массива: ");
+int arraylength = Convert.ToInt32(Console.ReadLine());
 
-// void FillArray(int[] array)
-// {
-//     Console.Write("Сгенерированный массив: ");
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         array[i] = new Random().Next(0, 5);
-//         Console.Write(array[i] + " ");
-//     }
-// }
+int[] array = new int[arraylength];
 
-// void Sortarray(int[] array, int len) //! сортировка массива
-// {
-//     for (int i = 0; i < len - 1; i++)
-//     {
-//         int m = 0;
-//         for (int j = 0; j + i < len - 1; j++)
-//         {
-//             if (array[j] > array[j + 1])
-//             {
-//                 m = array[j];
-//                 array[j] = array[j + 1];
-//                 array[j + 1] = m;
-//             }
-//         }
+FillArray(array);
+Console.WriteLine();
+FindSequence(array);
 
-//     }
-// }
+void FillArray(int[] array)
+{
+    Console.Write("Сгенерированный массив: ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(0, 10);
+        Console.Write(array[i] + " ");
+    }
+}
+
+void FindSequence(int[] array)
+{
+    bool[] arraynum = new bool[10];
+    for (int i = 0; i < array.Length; i++) arraynum[array[i]] = true;
+
+    for (int j = 0; j < arraynum.Length; j++) Console.Write(arraynum[j] + " ");
+
+    int maxnum = 0; int count = 0; int number = 0;
+
+    for (int j = 0; j < arraynum.Length - 1; j++)
+    {
+
+        if (arraynum[j] == true & arraynum[j + 1] == true) { count++; maxnum = count; }
+        else if (maxnum < count) { count = 0; number = j; }
+
+    }
+    Console.WriteLine();
+    Console.WriteLine(maxnum + 1);
+    Console.WriteLine(number);
+}
+
 

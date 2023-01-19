@@ -208,3 +208,4 @@ RandomArray(array, len);
 Console.Write("Рандомный массив: ");
 PrintArray(array);
 
+Console.ReadKey();
