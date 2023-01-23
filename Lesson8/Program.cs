@@ -252,13 +252,12 @@ PrintArray(array);
 void SpiralArray(int[,] array)
 {
     int sum = 0;
-    int m=1;
-    int d = 1;
-    for (int z = 0; z < 2; z++)
-    {
-        
-        {
-            int i = z; int j = z;
+    int m=3;
+    int d = 0;
+    
+       link1:
+        int z = 0;
+        int i = z; int j = z;
         while (j < m)
         {
             sum++; array[i+d, j+d] = sum; j++;
@@ -281,9 +280,14 @@ void SpiralArray(int[,] array)
         {
             sum++; array[m - i+d, j+d] = sum; i++;
         }
-        }    
-        
-    }
+           
+        m = m-2;
+        d = d+1;
+        z = z+1;
+        if (sum >= 16) return;
+        goto link1;
+    
+    
 
 } 
 
