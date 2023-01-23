@@ -241,10 +241,9 @@
 
 
 
-Console.Write("Введите размерность массива ");
-int sizearray = Convert.ToInt32(Console.ReadLine());
 
-int[,] array = new int[4, 4];
+int sizearray = 4;
+int[,] array = new int[sizearray, sizearray];
 
 SpiralArray(array);
 PrintArray(array);
@@ -284,16 +283,9 @@ void SpiralArray(int[,] array)
         m = m-2;
         d = d+1;
         z = z+1;
-        if (sum >= 16) return;
+        if (sum >= sizearray*sizearray) return;
         goto link1;
-    
-    
-
 } 
-
-
-
-
 
 void PrintArray(int[,] array)                                                           // выводим на экран массив                                                          
 {
