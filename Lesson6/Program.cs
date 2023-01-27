@@ -211,44 +211,44 @@ Console.WriteLine();
 [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ] => [3, 5]
 */
 
-Console.Write($"Введите размерность массива: ");
-int arraylength = Convert.ToInt32(Console.ReadLine());
+// Console.Write($"Введите размерность массива: ");
+// int arraylength = Convert.ToInt32(Console.ReadLine());
 
-int[] array = new int[arraylength];
+// int[] array = new int[arraylength];
 
-FillArray(array);
-Console.WriteLine();
-FindSequence(array);
+// FillArray(array);
+// Console.WriteLine();
+// FindSequence(array);
 
-void FillArray(int[] array)
-{
-    Console.Write("Сгенерированный массив: ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = new Random().Next(0, 10);
-        Console.Write(array[i] + " ");
-    }
-}
+// void FillArray(int[] array)
+// {
+//     Console.Write("Сгенерированный массив: ");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(0, 10);
+//         Console.Write(array[i] + " ");
+//     }
+// }
 
-void FindSequence(int[] array)
-{
-    bool[] arraynum = new bool[10];
-    for (int i = 0; i < array.Length; i++) arraynum[array[i]] = true;
+// void FindSequence(int[] array)
+// {
+//     bool[] arraynum = new bool[10];
+//     for (int i = 0; i < array.Length; i++) arraynum[array[i]] = true;
 
-    for (int j = 0; j < arraynum.Length; j++) Console.Write(arraynum[j] + " ");
+//     for (int j = 0; j < arraynum.Length; j++) Console.Write(arraynum[j] + " ");
 
-    int maxnum = 0; int count = 0; int number = 0;
+//     int maxnum = 0; int count = 0; int number = 0;
 
-    for (int j = 0; j < arraynum.Length - 1; j++)
-    {
+//     for (int j = 0; j < arraynum.Length - 1; j++)
+//     {
 
-        if (arraynum[j] == true & arraynum[j + 1] == true) { count++; maxnum = count; }
-        else if (maxnum < count) { count = 0; number = j; }
+//         if (arraynum[j] == true & arraynum[j + 1] == true) { count++; maxnum = count; }
+//         else if (maxnum < count) { count = 0; number = j; }
 
-    }
-    Console.WriteLine();
-    Console.WriteLine(maxnum + 1);
-    Console.WriteLine(number);
-}
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine(maxnum + 1);
+//     Console.WriteLine(number);
+// }
 
 
